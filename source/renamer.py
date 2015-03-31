@@ -74,7 +74,8 @@ class renamer(object):
             if not self._object_id:
                 raise Exception("Need to have set the object_id first.")
             else:
-                new_destination = self.object_id + self.total_files
+                new_destination = self.object_id + str(self.total_files)
+                self.total_files += 1
                 # path, file = os.path.split(source)
                 #
                 # file, extension = os.path.splitext(file)
@@ -139,7 +140,7 @@ def main():
 
     # source1 = '/Users/lpsdesk/PycharmProjects/rename_images/testImages/tif/ana102.tif'
 
-    for root, dir, files in os.walk('/Users/lpsdesk/PycharmProjects/rename_images/testImages/tif'):
+    for root, dir, files in os.walk('/Users/lpsdesk/PycharmProjects/Rename_images/testImages/tif'):
         for file in files:
             tester.add_file(os.path.join(root,file))
     # tester.add_file(source1)
